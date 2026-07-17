@@ -1,0 +1,12 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# storage account and function app names for global uniqueness).
+name_prefix = "iacfunc"
+
+location = "eastus"
+
+node_version = "20"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

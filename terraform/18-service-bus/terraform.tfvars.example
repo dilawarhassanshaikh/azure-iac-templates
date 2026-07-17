@@ -1,0 +1,13 @@
+# Prefix used to build the namespace name (a random suffix is appended
+# automatically for global uniqueness).
+name_prefix = "iacsb"
+
+location = "eastus"
+
+sku                    = "Standard"
+max_size_in_megabytes  = 1024
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

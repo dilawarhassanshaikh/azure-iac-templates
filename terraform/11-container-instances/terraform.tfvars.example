@@ -1,0 +1,14 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# DNS name label for global uniqueness).
+name_prefix = "iacaci"
+
+location = "eastus"
+
+image  = "mcr.microsoft.com/azuredocs/aci-helloworld:latest"
+cpu    = 1
+memory = 1.5
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

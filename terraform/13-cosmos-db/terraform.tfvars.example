@@ -1,0 +1,10 @@
+# Prefix used to build the Cosmos DB account name (a random suffix is
+# appended automatically for global uniqueness).
+name_prefix = "iaccosmos"
+
+location = "eastus"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

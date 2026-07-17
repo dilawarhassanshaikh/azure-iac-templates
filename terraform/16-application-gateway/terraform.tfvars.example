@@ -1,0 +1,18 @@
+# Prefix used to build resource names
+name_prefix = "iacagw"
+
+location = "eastus"
+
+sku_name = "WAF_v2"
+
+autoscale_min_capacity = 1
+autoscale_max_capacity = 3
+
+# Placeholder backend targets - replace with real private IPs (VMs, VMSS,
+# etc.) reachable from the appgw-subnet after deployment.
+backend_ip_addresses = ["10.1.2.4"]
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

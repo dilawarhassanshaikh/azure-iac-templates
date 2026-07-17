@@ -1,0 +1,19 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# server name for global uniqueness).
+name_prefix = "iacpsql"
+
+location = "eastus"
+
+# PostgreSQL admin credentials - do not commit real values.
+admin_login    = "psqladmin"
+admin_password = "ReplaceMe!2026Secure"
+
+sku_name   = "B_Standard_B1ms"
+storage_mb = 32768
+
+allow_azure_services = true
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

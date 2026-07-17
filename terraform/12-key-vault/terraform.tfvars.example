@@ -1,0 +1,15 @@
+# Prefix used to build the vault name (a random suffix is appended
+# automatically for global uniqueness).
+name_prefix = "iackv"
+
+location = "eastus"
+
+# Set to true for production - prevents permanent purge of deleted vaults
+# and secrets before the soft-delete retention period elapses. Defaults to
+# false here for easy teardown of this example deployment.
+purge_protection_enabled = false
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

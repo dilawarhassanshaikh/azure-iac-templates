@@ -1,0 +1,19 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# SQL server name for global uniqueness).
+name_prefix = "iacsql"
+
+location = "eastus"
+
+# SQL server admin credentials - do not commit real values.
+admin_login    = "sqladmin"
+admin_password = "ReplaceMe!2026Secure"
+
+sku_name    = "Basic"
+max_size_gb = 2
+
+allow_azure_services = true
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

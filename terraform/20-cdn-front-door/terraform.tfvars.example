@@ -1,0 +1,14 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# endpoint name for global uniqueness).
+name_prefix = "iacafd"
+
+location = "eastus"
+
+# Hostname of the origin to front, e.g. the default hostname of module
+# 05-app-service-webapp, or a storage static website endpoint.
+origin_host_name = "myapp.azurewebsites.net"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

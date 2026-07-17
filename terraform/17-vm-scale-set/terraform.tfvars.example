@@ -1,0 +1,19 @@
+# Prefix used to build resource names
+name_prefix = "iacvmss"
+
+location = "eastus"
+
+# Generate a key pair first if you don't have one:
+#   ssh-keygen -t ed25519 -C "azure-iac-templates" -f ./id_ed25519
+# Then paste the contents of the .pub file below.
+ssh_public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... user@example.com"
+
+admin_username = "azureuser"
+
+sku       = "Standard_B2s"
+instances = 2
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

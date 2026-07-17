@@ -1,0 +1,14 @@
+# Prefix used to build the storage account name (a random suffix is appended
+# automatically for global uniqueness). Keep this short - storage account
+# names must be <= 24 characters total, lowercase letters and digits only.
+name_prefix = "iacsa"
+
+location = "eastus"
+
+account_tier             = "Standard"
+account_replication_type = "LRS"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

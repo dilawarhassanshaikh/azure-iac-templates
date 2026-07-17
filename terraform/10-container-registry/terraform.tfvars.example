@@ -1,0 +1,12 @@
+# Prefix used to build the registry name (a random suffix is appended
+# automatically for global uniqueness). Alphanumeric only, no hyphens.
+name_prefix = "iacacr"
+
+location = "eastus"
+
+sku = "Standard"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

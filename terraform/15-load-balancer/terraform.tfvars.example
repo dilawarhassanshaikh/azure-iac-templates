@@ -1,0 +1,11 @@
+# Prefix used to build resource names
+name_prefix = "iaclb"
+
+location = "eastus"
+
+health_probe_port = 80
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

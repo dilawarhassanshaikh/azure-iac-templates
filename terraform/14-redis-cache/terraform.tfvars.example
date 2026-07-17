@@ -1,0 +1,13 @@
+# Prefix used to build the cache name (a random suffix is appended
+# automatically for global uniqueness).
+name_prefix = "iacredis"
+
+location = "eastus"
+
+sku_name = "Basic"
+capacity = 0
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

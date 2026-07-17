@@ -1,0 +1,11 @@
+# Prefix used to build resource names
+name_prefix = "iaclaw"
+
+location = "eastus"
+
+retention_in_days = 30
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

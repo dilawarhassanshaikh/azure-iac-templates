@@ -1,0 +1,13 @@
+# Prefix used to build resource names (a random suffix is appended to the
+# web app name for global uniqueness).
+name_prefix = "iacweb"
+
+location = "eastus"
+
+sku_name     = "B1"
+node_version = "20-lts"
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}

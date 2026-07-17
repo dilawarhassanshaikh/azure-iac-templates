@@ -1,0 +1,12 @@
+# Prefix used to build resource names
+name_prefix = "iacaks"
+
+location = "eastus"
+
+dns_prefix = "iacaks"
+node_count = 2
+
+tags = {
+  environment = "dev"
+  project     = "azure-iac-templates"
+}
