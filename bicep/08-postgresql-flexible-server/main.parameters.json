@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "namePrefix": {
+      "value": "pg"
+    },
+    "adminLogin": {
+      "value": "pgadmin"
+    },
+    "adminPassword": {
+      "value": "REPLACE_WITH_A_STRONG_PASSWORD_123!"
+    },
+    "postgresVersion": {
+      "value": "16"
+    },
+    "skuName": {
+      "value": "Standard_B1ms"
+    },
+    "storageSizeGB": {
+      "value": 32
+    },
+    "databaseName": {
+      "value": "appdb"
+    },
+    "allowAzureServices": {
+      "value": true
+    }
+  }
+}
