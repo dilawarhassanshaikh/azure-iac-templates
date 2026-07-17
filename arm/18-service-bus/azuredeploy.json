@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "namePrefix": {
+      "type": "string",
+      "defaultValue": "sb",
+      "metadata": {
+        "description": "Prefix used to build resource names."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Azure region for all resources."
+      }
+    },
+    "skuName": {
+      "type": "string",
+      "defaultValue": "Standard",
+      "metadata": {
+        "description": "Service Bus namespace SKU."
+      }
+    },
+    "queueName": {
+      "type": "string",
+      "defaultValue": "appqueue",
+      "metadata": {
+        "description": "Name of the Service Bus queue."
+      }
+    },
+    "maxSizeInMegabytes": {
+      "type": "int",
+      "defaultValue": 1024,
+      "metadata": {
+        "description": "Maximum size of the queue in megabytes."
+      }
+    },
+    "tags": {
+      "type": "object",
+      "defaultValue": {
+        "environment": "dev",
+        "project": "azure-iac-templates"
+      },
+      "metadata": {
+        "description": "Tags applied to all resources."
+      }
+    }
+  },
+  "variables": {
+    "uniqueSuffix": "[uniqueString(resourceGroup().id)]",
+    "namespaceName": "[toLower(format('{0}-{1}', parameters('namePrefix'), variables('uniqueSuffix')))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ServiceBus/namespaces",
+      "apiVersion": "2021-11-01",
+      "name": "[variables('namespaceName')]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "sku": {
+        "name": "[parameters('skuName')]",
+        "tier": "[parameters('skuName')]"
+      },
+      "properties": {}
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/queues",
+      "apiVersion": "2021-11-01",
+      "name": "[format('{0}/{1}', variables('namespaceName'), parameters('queueName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces', variables('namespaceName'))]"
+      ],
+      "properties": {
+        "maxSizeInMegabytes": "[parameters('maxSizeInMegabytes')]"
+      }
+    }
+  ],
+  "outputs": {
+    "namespaceId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.ServiceBus/namespaces', variables('namespaceName'))]"
+    },
+    "queueName": {
+      "type": "string",
+      "value": "[parameters('queueName')]"
+    }
+  }
+}
